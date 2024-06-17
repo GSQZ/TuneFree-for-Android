@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clBase"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPageBackground"
+    android:visibility="visible"
+    tools:context=".ui.player.PlayerActivity">
+
+    <ImageView
+        android:id="@+id/ivLyricsBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.2"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/llBase"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.dirror.music.widget.TimeTextView
+                    android:id="@+id/ttvDuration"
+                    android:layout_width="40dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="33dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+                <com.dirror.music.widget.TimeTextView
+                    android:id="@+id/ttvProgress"
+                    android:layout_width="40dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="33dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginEnd="56dp"
+                    android:layout_marginBottom="4dp"
+                    android:alpha="0.72"
+                    android:background="@null"
+                    android:maxHeight="2dp"
+                    android:minHeight="4dp"
+                    android:progressDrawable="@drawable/background_seek_bar_music"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/background_seek_bar_thumb"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/clControl"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clControl"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivPlay"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/background_button_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_player_playing"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <ImageView
+                        android:id="@+id/ivLast"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/background_button_icon"
+                        android:padding="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivPlay"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_player_previous"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <ImageView
+                        android:id="@+id/ivNext"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/background_button_icon"
+                        android:padding="16dp"
+                        android:rotation="180"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivPlay"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_player_previous"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <ImageView
+                        android:id="@+id/ivMode"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/background_button_icon"
+                        android:padding="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_bq_player_mode_circle" />
+
+                    <ImageView
+                        android:id="@+id/ivList"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/background_button_icon"
+                        android:padding="17dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_player_play_queue" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <include
+                android:id="@+id/includePlayerCover"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                layout="@layout/player_cover_image_view"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintBottom_toTopOf="@+id/clBottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clLyric"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clMenu"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivEqualizer"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/background_button_icon"
+                    android:contentDescription="@string/equalizer"
+                    android:padding="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_player_sound_effect" />
+
+                <ImageView
+                    android:id="@+id/ivSleepTimer"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_button_icon"
+                    android:contentDescription="@string/close_timer"
+                    android:padding="14.5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivLike"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/ivEqualizer"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_player_sleep_timer" />
+
+                <ImageView
+                    android:id="@+id/ivLike"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_button_icon"
+                    android:contentDescription="@string/add_to_local_my_favorite"
+                    android:padding="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivComment"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/ivSleepTimer"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/mz_titlebar_ic_collect" />
+
+                <ImageView
+                    android:id="@+id/ivComment"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/background_button_icon"
+                    android:contentDescription="@string/comment"
+                    android:padding="17dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivMore"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/ivLike"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_player_comment" />
+
+                <ImageView
+                    android:id="@+id/ivMore"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/background_button_icon"
+                    android:contentDescription="@string/more"
+                    android:padding="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_player_more" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <me.qinc.lib.edgetranslucent.EdgeTransparentView
+                android:id="@+id/edgeTransparentView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:edge_position="top|bottom"
+                app:edge_width="56dp"
+                app:layout_constraintBottom_toTopOf="@+id/clMenu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivBack">
+
+                <com.dirror.lyricviewx.LyricViewX
+                    android:id="@+id/lyricView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    app:lrcPadding="35dp">
+
+                </com.dirror.lyricviewx.LyricViewX>
+
+                <!--            app:lrcTextGravity="left"-->
+
+            </me.qinc.lib.edgetranslucent.EdgeTransparentView>
+
+            <com.dirror.music.widget.MarqueeTextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:text="@string/music"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorTextForeground"
+                android:textSize="20sp"
+                android:transitionName="tvName"
+                app:layout_constraintBottom_toTopOf="@+id/tvArtist"
+                app:layout_constraintEnd_toStartOf="@+id/ivBack"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvArtist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:alpha="0.5"
+                android:maxWidth="100dp"
+                android:paddingStart="1dp"
+                android:singleLine="true"
+                android:text="@string/artist"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorTextForeground"
+                android:textSize="12sp"
+                android:transitionName="tvArtist"
+                app:layout_constraintBottom_toTopOf="@+id/edgeTransparentView"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="16dp"
+                android:alpha="0.5"
+                android:background="@drawable/background_button_icon"
+                android:contentDescription="@string/back"
+                android:paddingStart="19dp"
+                android:paddingEnd="13dp"
+                android:rotation="270"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/ivVolume"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="33dp"
+                android:alpha="0.94"
+                android:padding="2dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/edgeTransparentView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_volume"
+                tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+            <SeekBar
+                android:id="@+id/seekBarVolume"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="17.5dp"
+                android:alpha="0.5"
+                android:maxHeight="2dp"
+                android:minHeight="4dp"
+                android:progressDrawable="@drawable/background_seek_bar_music"
+                android:splitTrack="false"
+                android:thumb="@drawable/background_seek_bar_thumb"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/edgeTransparentView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivVolume"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivTranslation"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/background_button_icon"
+                android:contentDescription="@string/translation"
+                android:padding="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/clMenu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_translation"
+                tools:ignore="VectorDrawableCompat" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

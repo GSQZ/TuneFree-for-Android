@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clDialog"
+    android:background="@drawable/bg_slide_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvSongName"
+            android:text="@string/music"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/defaultPadding"
+            android:paddingEnd="@dimen/defaultPadding"
+            android:textSize="@dimen/defaultTextSize"
+            android:textColor="@color/colorTextForeground"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp" />
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemAddNeteaseFavorite"
+            app:text="@string/add_to_netease_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemPlayHistory"
+            app:text="@string/history"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemSongInfo"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:text="@string/song_info"/>
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/timeClose"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:visibility="gone"
+            app:text="定时关闭">
+
+        </com.dirror.music.widget.ItemLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

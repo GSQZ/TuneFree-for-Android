@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.activity.AboutActivity">
+
+    <com.dirror.music.widget.TitleBarLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:text="@string/about">
+
+    </com.dirror.music.widget.TitleBarLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/defaultPadding">
+
+            <TextView
+                android:id="@+id/tvDsoMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="@string/app_name"
+                android:textColor="@color/colorTextForeground"
+                android:textSize="@dimen/bigTextSize" />
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="16dp"-->
+            <!--                android:text="春江花月夜系列"-->
+            <!--                android:textIsSelectable="true"-->
+            <!--                android:textSize="12sp"-->
+            <!--                android:layout_gravity="center_horizontal"/>-->
+
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/version"
+                android:textIsSelectable="true"
+                android:textSize="12sp" />
+
+
+            <com.dirror.music.widget.ItemLayout
+                android:id="@+id/itemCheckForUpdates"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                app:text="@string/check_for_updates" />
+
+<!--            <com.dirror.music.widget.ItemLayout-->
+<!--                android:id="@+id/itemSourceCode"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/defaultHeight"-->
+<!--                app:text="@string/source_code" />-->
+
+<!--            <com.dirror.music.widget.ItemLayout-->
+<!--                android:id="@+id/itemUpdateLog"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="56dp"-->
+<!--                app:text="@string/update_log" />-->
+
+<!--            <com.dirror.music.widget.ItemLayout-->
+<!--                android:id="@+id/itemOpenSourceCode"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="56dp"-->
+<!--                app:text="使用开源项目" />-->
+
+<!--            <com.dirror.music.widget.ItemLayout-->
+<!--                android:id="@+id/itemJoinQQGroup"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:visibility="gone"-->
+<!--                app:text="@string/join_qq_group" />-->
+
+            <!--            <TextView-->
+            <!--                android:text="关注 遇荐 公众号"-->
+            <!--                style="@style/style_settings_title"/>-->
+
+            <!--            <TextView-->
+            <!--                style="@style/defaultValueText"-->
+            <!--                android:text="获取最新 Dso Music、椒盐音乐、Foyou 等软件下载链接等等~"/>-->
+
+            <!--            <ImageView-->
+            <!--                android:layout_margin="10dp"-->
+            <!--                android:layout_width="100dp"-->
+            <!--                android:layout_height="100dp"-->
+            <!--                android:src="@drawable/qrcode_yujian"/>-->
+
+            <TextView
+                style="@style/style_settings_title"
+                android:text="声明及协议" />
+
+            <TextView
+                style="@style/defaultValueText"
+                android:text="本软件TuneFree二开于开源项目Moriafly/DsoMusic，TuneFree软件内不提供歌曲下载，只提供在线音乐试听，请支持正版音乐。
+" />
+
+            <TextView
+                style="@style/style_settings_title"
+                android:text="@string/open_source_introduction" />
+
+            <TextView
+                style="@style/defaultValueText"
+                android:text="Moriafly/DsoMusic 项目基于 GNU General Public License v3.0 开源许可协议" />
+
+            <TextView
+                style="@style/style_settings_title"
+                android:text="维护" />
+
+            <com.dirror.music.widget.ValueView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:text="思路提供"
+                app:value="晨星025" />
+
+            <com.dirror.music.widget.ValueView
+                android:id="@+id/moriafly"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:text="代码"
+                app:value="Moriafly" />
+
+            <com.dirror.music.widget.ValueView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:text="代码"
+                app:value="olbb" />
+
+            <com.dirror.music.widget.ValueView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:text="代码"
+                app:value="yhsj0919" />
+
+            <com.dirror.music.widget.ValueView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:text="代码"
+                app:value="lbccccc" />
+
+            <com.dirror.music.widget.ValueView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:text="代码"
+                app:value="chen310" />
+
+            <com.dirror.music.widget.ValueView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:text="代码"
+                app:value="can-dy-jack" />
+
+            <TextView
+                style="@style/style_settings_title"
+                android:text="媒体编解码器"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvMediaCodec"
+                style="@style/defaultValueText"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

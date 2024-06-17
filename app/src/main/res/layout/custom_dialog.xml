@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="24dp"
+
+    android:paddingRight="24dp"
+    android:paddingBottom="21dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="25dp"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="8sp"
+        android:text="提示"
+        android:textColor="#de000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="6sp"
+        android:text="这是自定义弹出框"
+        android:textColor="#99000000"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:id="@+id/twoButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/negativeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="89dp"
+            android:focusableInTouchMode="false"
+            android:letterSpacing="0.09"
+            android:lineSpacingExtra="2sp"
+            android:padding="10dp"
+            android:text="取消"
+            android:textColor="#138ef0"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/positiveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:letterSpacing="0.09"
+            android:lineSpacingExtra="2sp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp"
+            android:text="满意"
+            android:textColor="#138ef0"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/singleButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp">
+
+        <TextView
+            android:id="@+id/singleBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:letterSpacing="0.09"
+            android:lineSpacingExtra="2sp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp"
+            android:text="确定"
+            android:textColor="#138ef0"
+            android:textSize="14sp" />
+    </RelativeLayout>
+</LinearLayout>

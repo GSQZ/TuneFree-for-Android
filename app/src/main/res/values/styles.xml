@@ -1,0 +1,141 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">#FFFFFF</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">@bool/dso_bool_status_bar_foreground</item>
+        <item name="android:windowBackground">@color/colorPageBackground</item>
+    </style>
+
+    <!-- 透明 -->
+    <style name="AppTheme.Translucent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/colorTransparency</item>-->
+    </style>
+
+    <!-- 全屏 -->
+    <style name="AppTheme.FullScreen">
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="AppTheme.Search" parent="AppTheme.FullScreen">
+        <item name="colorPrimary">#f0f0f0</item>
+        <item name="colorOnSecondary">@color/colorAppThemeColor</item>
+<!--        <item name="colorPrimaryDark">#0fa000</item>-->
+<!--        <item name="colorAccent">#3f0000</item>-->
+<!--        <item name="colorControlHighlight">#00ffff</item>-->
+    </style>
+
+    <!-- 透明全屏 -->
+    <style name="AppTheme.FullScreen.Translucent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/colorTransparency</item>-->
+    </style>
+
+    <style name="style_default_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:background">@drawable/drawableTransparent</item>
+        <item name="android:windowBackground">@drawable/drawableTransparent</item>
+    </style>
+
+    <style name="dialog_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_slide_enter_bottom</item>
+        <item name="android:windowExitAnimation">@anim/anim_slide_exit_bottom</item>
+    </style>
+
+    <style name="sub_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:height">28dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:textColor">@color/colorTextForeground</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="default_edit_text">
+        <item name="android:textCursorDrawable">@drawable/text_cursor_drawable</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@drawable/bg_edit_text</item>
+    </style>
+
+    <style name="defaultValueText">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingStart">@dimen/defaultPadding</item>
+        <item name="android:paddingEnd">@dimen/defaultPadding</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="switcher">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="switcher_off_color">@color/dso_color_switch_background</item>
+        <item name="switcher_on_color">@color/dso_color_high_light</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <drawable name="drawableTransparent">#00000000</drawable>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="dso_style_button_default">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="minHeight">40dp</item>
+        <item name="android:background">@drawable/background_button_radius_red</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_settings_title" parent="sub_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:textColor">@color/dso_color_high_light</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="dso_style_text_view_default">
+        <item name="android:textColor">@color/colorTextForeground</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+    </style>
+
+    <style name="dso_style_rounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">125dp</item>
+    </style>
+
+    <style name="CustomDialog" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@drawable/comment_dialog_bg</item>
+    </style>
+
+</resources>

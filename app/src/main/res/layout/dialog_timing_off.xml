@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_slide_layout"
+    android:orientation="vertical"
+    android:paddingStart="6dp"
+    android:paddingEnd="@dimen/defaultPadding">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:paddingStart="@dimen/defaultPadding"
+        android:text="定时关闭"
+        android:textColor="@color/colorTextForeground"
+        android:textSize="20sp" />
+
+    <com.dirror.music.widget.RightView
+        android:id="@+id/time0"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:text="不开启" />
+
+    <com.dirror.music.widget.RightView
+        android:id="@+id/time10"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:text="10分钟后" />
+
+    <com.dirror.music.widget.RightView
+        android:id="@+id/time20"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:text="20分钟后" />
+
+    <com.dirror.music.widget.RightView
+        android:id="@+id/time30"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:text="30分钟后" />
+
+    <com.dirror.music.widget.RightView
+        android:id="@+id/time45"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:text="45分钟后" />
+
+    <com.dirror.music.widget.RightView
+        android:id="@+id/time60"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:text="60分钟后" />
+
+    <com.dirror.music.widget.RightView
+        android:id="@+id/timeCustom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:text="自定义" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp">
+
+
+        <com.bitvale.switcher.SwitcherX
+            android:id="@+id/switcherTimingOff"
+            style="@style/switcher"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/timingOffMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="计时结束后播完当前歌曲再停止"
+            android:textColor="@color/colorTextForeground"
+            android:textSize="@dimen/defaultTextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

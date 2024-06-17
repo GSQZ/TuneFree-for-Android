@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowActivityTransitions">true</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">#FFFFFF</item>
+        <item name="android:windowLightStatusBar">@bool/dso_bool_status_bar_foreground</item>
+        <item name="android:statusBarColor">@color/colorStatusBar</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowBackground">@color/colorPageBackground</item>
+
+        <!-- v29 禁用系统黑暗模式 -->
+        <item name="android:forceDarkAllowed">false</item>
+
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+
+    </style>
+</resources>

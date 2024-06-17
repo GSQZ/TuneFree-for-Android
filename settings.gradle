@@ -1,0 +1,4 @@
+include ':DsoKotlinExtensions'
+include ':lyricview'
+include ':app'
+rootProject.name = "dso-music"

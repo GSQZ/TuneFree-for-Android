@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_slide_layout">
+
+    <LinearLayout
+        android:id="@+id/songMenuParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemNextPlay"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:text="@string/next_play" />
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemAddLocalMyFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:text="@string/add_to_local_my_favorite" />
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemAddNeteaseFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:text="@string/add_to_netease_favorite" />
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemSongComment"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:text="@string/song_comment" />
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemSongInfo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:text="@string/song_info" />
+
+        <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemDeleteSong"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:text="@string/remove_the_song" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

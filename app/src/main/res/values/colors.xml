@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#969696</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <bool name="dso_bool_status_bar_foreground">true</bool>
+
+    <!-- 状态栏背景色 -->
+    <color name="colorStatusBar">#FFFFFF</color>
+
+    <!-- 页面背景色-->
+    <color name="colorPageBackground">#FFFFFF</color>
+    <color name="dso_color_page">#F9F9F9</color>
+
+    <color name="colorMenuBackground">#BFFFFFFF</color>
+
+    <!-- 图标前景色 -->
+    <color name="colorIconForeground">#000000</color>
+    <color name="colorSubIconForeground">#5A5A5A</color>
+
+    <!-- Item 背景色 -->
+    <color name="colorItemBackground">#FFFFFF</color>
+    <color name="colorItemPressedBackground">#F0F0F0</color>
+
+    <!-- 字体前景色 -->
+    <color name="colorTextForeground">#050505</color>
+    <color name="colorSubTextForeground">#787878</color>
+    <color name="colorEditTextBackground">#F5F5F5</color>
+
+    <color name="colorCheckItemBackground">#C8C8C8</color>
+
+    <color name="colorTransparency">#00000000</color>
+
+    <!--    <color name="colorAppThemeColor">#2191FA</color>-->
+    <color name="colorAppThemeColor">#DB2C1F</color>
+    <color name="colorDialogBackground">#FFFFFF</color>
+    <color name="colorHintForeground">#C8C8C8</color>
+
+    <color name="salt_color_song_cover">#F3F3F3</color>
+
+    <color name="colorBlurViewBackground">#BFFFFFFF</color>
+    <color name="miniPlayerBlurViewBackground">#73FFFFFF</color>
+    <color name="colorCommonTextForeground">#969696</color>
+
+    <color name="colorDividerBackground">#E6E6E6</color>
+
+    <color name="colorLyricSubForeground">#4B4B4B</color>
+
+    <color name="dso_color_high_light">#0470E6</color>
+    <color name="dso_color_home_widget">#F5F5F5</color>
+    <color name="dso_color_switch_background">#EBEBEB</color>
+
+    <color name="dso_color_song_unable">#D2D2D2</color>
+
+    <color name="playlistPageBackground">#F7ECEA</color>
+    <color name="menuMainBackground">#FAFAFA</color>
+
+    <color name="lrc_normal_text_color">#6C6C6C</color>
+    <color name="lrc_current_text_color">@color/colorTextForeground</color>
+    <color name="lrc_timeline_text_color">#343434</color>
+    <color name="lrc_timeline_color">#809E9E9E</color>
+    <color name="lrc_time_text_color">#809E9E9E</color>
+
+    <color name="dso_color_lyrics_back">#BFFFFFFF</color>
+    <color name="dso_color_white_alpha_10">#26FFFFFF</color>
+
+    <color name="dso_color_player_cd_background">#80FFFFFF</color>
+    <color name="dso_color_page_item">#66FFFFFF</color>
+    <color name="dso_color_player_cover_image_view">#40FFFFFF</color>
+</resources>

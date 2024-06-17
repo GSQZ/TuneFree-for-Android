@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_slide_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <com.dirror.music.widget.ValueView
+            android:id="@+id/valueViewId"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:text="@string/song_id" />
+
+        <com.dirror.music.widget.ValueView
+            android:id="@+id/valueViewSource"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:text="@string/source">
+
+        </com.dirror.music.widget.ValueView>
+
+        <com.dirror.music.widget.ValueView
+            android:id="@+id/valueViewBitrate"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:text="@string/bit_rate" />
+
+        <com.dirror.music.widget.ValueView
+            android:id="@+id/valueViewSize"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:text="@string/size" />
+
+        <com.dirror.music.widget.ValueView
+            android:id="@+id/valueViewType"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:text="@string/type" />
+
+        <com.dirror.music.widget.ValueView
+            android:id="@+id/valueViewData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:text="@string/address" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

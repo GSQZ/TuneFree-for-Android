@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.MEDIA_CONTENT_CONTROL"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="UnusedAttribute">
+        <activity android:name=".ui.activity.LocalMusicActivity" />
+        <activity android:name=".ui.activity.MemoryActivity" />
+        <activity android:name=".ui.live.NeteaseCloudMusicApiActivity" />
+        <activity
+
+            android:name=".ui.playlist.SongSearchActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.player.SongCoverActivity"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity android:name=".ui.activity.AgreementActivity" />
+        <activity android:name=".ui.activity.UserCloudActivity" />
+        <activity android:name=".ui.activity.TopListActivity" />
+        <activity android:name=".ui.activity.RecommendActivity" />
+        <activity
+            android:name=".ui.activity.AboutActivity"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity android:name=".ui.activity.PlaylistInfoActivity" />
+        <activity android:name=".ui.activity.ArtistActivity" />
+        <activity android:name=".ui.activity.PlayHistoryActivity" />
+        <activity
+            android:name=".ui.activity.LoginActivity3"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity android:name=".ui.activity.PrivateLetterActivity" />
+        <activity
+            android:name=".ui.activity.UserActivity"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity android:name=".ui.activity.WebActivity" />
+        <activity android:name=".ui.activity.FeedbackActivity" />
+        <activity
+            android:name=".ui.activity.SearchActivity"
+            android:theme="@style/AppTheme.Search"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.CommentActivity"
+            android:theme="@style/AppTheme.FullScreen.Translucent" />
+        <activity android:name=".ui.activity.OpenSourceActivity" />
+        <activity android:name=".ui.activity.SettingsActivity" />
+        <activity
+            android:name=".ui.player.PlayerActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.FullScreen.Translucent" />
+        <activity
+            android:name=".ui.playlist.SongPlaylistActivity"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity android:name=".ui.activity.LoginByUidActivity" />
+        <activity android:name=".ui.activity.LoginByPhoneActivity" />
+        <activity android:name=".ui.activity.LoginByPhoneCaptchaActivity" />
+        <activity android:name=".ui.activity.LoginByQRCodeActivity" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.FullScreen" />
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/AppTheme.FullScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.sayqz.tunefree.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service
+            android:name=".service.MusicService"
+            android:exported="false"
+            android:stopWithTask="true"
+            android:foregroundServiceType="mediaPlayback" />
+    </application>
+
+</manifest>
