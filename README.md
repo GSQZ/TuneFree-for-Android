@@ -1,5 +1,9 @@
 <h2 align="center" style="font-weight: 600">TuneFree for Android</h2>
 
+<h2>教你一点礼仪，别他妈跑到别人作品下面瞎几把吹说TuneFree比你做的好，别他妈吹牛逼了，我也是二开的别人软件，没啥技术含量，别tm到处引战给我丢脸了 </h2>
+
+
+
 Kotlin 开发的美观的安卓音乐软件。
 二开于Dso Music，修复了大部分已经失效的功能，也新增了很多东西，可以看看，下面这个是pc端。请注意，本项目基于开源项目 Dso Music 进行二次开发，故产生的一切责任都与Dso Music以及他的开发者无关！Tips：该文档大部分内容引用了Dso Musicr仓库中的README.md  目前运营重心不怎么在安卓端上，只能说勉强能用（有热更新，下一个用也无妨）
 
