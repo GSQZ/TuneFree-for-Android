@@ -23,16 +23,27 @@
         <entry key="..\:/AndroidStudioProject/DsoMusic-master/app/src/main/res/layout/mini_player.xml" value="0.3582427536231884" />
         <entry key="..\:/AndroidStudioProject/DsoMusic-master/app/src/main/res/layout/recycler_fragment_my_icon.xml" value="0.3582427536231884" />
         <entry key="..\:/AndroidStudioProject/DsoMusic-master/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3035" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/drawable/background_button_icon.xml" value="0.1985" />
         <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/drawable/background_button_radius_red.xml" value="0.1985" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/drawable/ic_player_comment.xml" value="0.1985" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/drawable/ic_player_heart_outline.xml" value="0.1985" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/drawable/ic_share.xml" value="0.1985" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/drawable/loading_dialog_bg.xml" value="0.1985" />
         <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/activity_login3.xml" value="0.3582427536231884" />
         <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/activity_login_by_phone.xml" value="0.3582427536231884" />
         <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/activity_login_by_phone_captcha.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/activity_login_by_qrcode.xml" value="0.3582427536231884" />
-        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/activity_player.xml" value="0.17603850050658562" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/activity_player.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/activity_playlist.xml" value="0.3582427536231884" />
         <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/activity_recommend.xml" value="0.3582427536231884" />
         <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/activity_search.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/custom_loading.xml" value="0.3582427536231884" />
         <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/dialog_notice.xml" value="0.3582427536231884" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/dialog_song_menu.xml" value="0.20989583333333334" />
         <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/fragment_home.xml" value="0.3582427536231884" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/layout_playlist.xml" value="0.3582427536231884" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/recycler_fragment_my_user.xml" value="0.3582427536231884" />
+        <entry key="..\:/AndroidStudioProject/TuneFree/app/src/main/res/layout/recycler_my_playlist.xml" value="0.3582427536231884" />
         <entry key="..\:/Users/24568/Documents/GitHub/dirror-music/app/src/main/res/drawable/ic_mini_player_pause.xml" value="0.158" />
         <entry key="..\:/Users/24568/Documents/GitHub/dirror-music/app/src/main/res/drawable/ic_mini_player_play.xml" value="0.158" />
         <entry key="..\:/Users/24568/Documents/GitHub/dirror-music/app/src/main/res/layout-land/activity_player.xml" value="0.13177083333333334" />

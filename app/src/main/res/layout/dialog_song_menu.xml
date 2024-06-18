@@ -36,6 +36,12 @@
             app:text="@string/add_to_netease_favorite" />
 
         <com.dirror.music.widget.ItemLayout
+            android:id="@+id/itemSongShare"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:text="@string/song_share" />
+
+        <com.dirror.music.widget.ItemLayout
             android:id="@+id/itemSongComment"
             android:layout_width="match_parent"
             android:layout_height="48dp"

@@ -92,6 +92,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.sayqz.tunefree.FileProvider"
@@ -108,5 +114,10 @@
             android:stopWithTask="true"
             android:foregroundServiceType="mediaPlayback" />
     </application>
+
+    <queries>
+        <package android:name="com.tencent.mm" />
+        <package android:name="com.tencent.mobileqq" />
+    </queries>
 
 </manifest>

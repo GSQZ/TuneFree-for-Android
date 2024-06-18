@@ -26,6 +26,8 @@ package com.dirror.music.ui.player
 
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -35,10 +37,14 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
+import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
-import android.view.*
+import android.view.KeyEvent
+import android.view.MotionEvent
+import android.view.View
+import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
 import android.widget.SeekBar
 import androidx.activity.viewModels
@@ -66,10 +72,10 @@ import com.dirror.music.ui.dialog.PlaylistDialog
 import com.dirror.music.ui.dialog.SoundEffectDialog
 import com.dirror.music.ui.dialog.TimingOffDialog
 import com.dirror.music.util.*
-import com.dirror.music.util.asColor
-import com.dirror.music.util.asDrawable
-import com.dirror.music.util.colorAlpha
 import com.dso.ext.colorMix
+import gdut.bsx.share2.Share2
+import gdut.bsx.share2.ShareContentType
+
 
 /**
  * PlayerActivity
@@ -89,6 +95,8 @@ class PlayerActivity : SlideBackActivity() {
 
     // ViewModel 数据和视图分离
     private val playViewModel: PlayerViewModel by viewModels()
+
+    private var loadingDialog: Dialog? = null
 
     // Looper + Handler
     private val handler = object : Handler(Looper.getMainLooper()) {
@@ -210,6 +218,38 @@ class PlayerActivity : SlideBackActivity() {
                     }
                 }
             }
+
+            ivShare?.setOnClickListener {
+                var shareImageUri: Uri
+                toast("加载海报中...")
+                playViewModel.getMusicID {songData->
+                    MagicHttp.OkHttpManager().getPic(
+                        this@PlayerActivity,
+                        "https://csm.sayqz.com/api/web/share/?id=${songData.id}"
+                    ) {uri->
+                        try {
+                            shareImageUri = uri
+                            songData.name?.let { it1 ->
+                                Share2.Builder(this@PlayerActivity)
+                                    .setContentType(ShareContentType.IMAGE)
+                                    .setTitle(it1)
+                                    .setShareFileUri(shareImageUri)
+                                    .build()
+                                    .shareBySystem()
+                            }
+                        } catch (e: Exception) {
+
+                        }
+                    }
+                }
+
+//                Share2.Builder(this@PlayerActivity)
+//                    .setContentType(ShareContentType.IMAGE)
+//                    .setShareFileUri(shareImageUri)
+//                    .build()
+//                    .shareBySystem()
+            }
+
             if (!isLandScape) {
                 includePlayerCover.root.setOnLongClickListener {
                     startActivity(Intent(this@PlayerActivity, SongCoverActivity::class.java))
@@ -580,6 +620,7 @@ class PlayerActivity : SlideBackActivity() {
                     ivSleepTimer.setColorFilter(it)
                     ivLike.setColorFilter(it)
                     ivComment.setColorFilter(it)
+                    ivShare?.setColorFilter(it)
                     ivMore.setColorFilter(it)
 
                     ivMode.setColorFilter(it)
@@ -691,12 +732,12 @@ class PlayerActivity : SlideBackActivity() {
      */
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         // 判断是否精准修改
-       val isFineTuning = App.mmkv.getBoolean(Config.FINE_TUNING, true)
+        val isFineTuning = App.mmkv.getBoolean(Config.FINE_TUNING, true)
         when (keyCode) {
             KeyEvent.KEYCODE_VOLUME_UP -> {
                 if (isFineTuning)
                     playViewModel.addVolume()
-                return  isFineTuning
+                return isFineTuning
             }
             KeyEvent.KEYCODE_VOLUME_DOWN -> {
                 if (isFineTuning)

@@ -25,19 +25,22 @@
 package com.dirror.music.util
 
 import android.content.Context
+import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import androidx.core.content.FileProvider
 import com.dirror.music.util.cache.ACache
 import okhttp3.*
-import okhttp3.OkHttpClient
 import org.jetbrains.annotations.TestOnly
+import java.io.File
+import java.io.FileOutputStream
 import java.io.IOException
-import java.net.Proxy
 import java.util.concurrent.TimeUnit
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
+
 
 /**
  * MagicHttp
@@ -145,7 +148,7 @@ object MagicHttp {
 
                 client.newCall(request).enqueue(object : Callback {
                     override fun onResponse(call: Call, response: Response) {
-                        Log.e(TAG, "onResponse: newGet()", )
+                        Log.e(TAG, "onResponse: newGet()")
                         val string = response.body()?.string()?:""
                         // val string = response.body?.string()!!
                         success.invoke(string)
@@ -191,6 +194,49 @@ object MagicHttp {
                 })
             } catch (e: Exception) {
                 e.printStackTrace()
+            }
+        }
+
+        fun getPic(context: Context, url: String, success: (Uri) -> Unit) {
+            try {
+                val client = OkHttpClient.Builder()
+                    .connectTimeout(5, TimeUnit.SECONDS)
+                    .readTimeout(3, TimeUnit.SECONDS)
+                    .writeTimeout(3, TimeUnit.SECONDS)
+                    .build()
+                val request = Request.Builder()
+                    .url(url)
+                    .get()
+                    .build()
+
+                client.newCall(request).enqueue(object : Callback {
+                    override fun onResponse(call: Call, response: Response) {
+                        Log.e(TAG, "onResponse: newGet()")
+                        val responseBody = response.body()
+                        val bytes = responseBody!!.bytes()
+                        val file = File(context.getFilesDir(), "海报.jpg")
+                        var fos: FileOutputStream? = null
+                        try {
+                            fos = FileOutputStream(file)
+                            fos.write(bytes)
+                        } catch (e: java.lang.Exception) {
+                            e.printStackTrace()
+                        } finally {
+                            if (fos != null) {
+                                fos.close()
+                            }
+                        }
+                        val contentUri = FileProvider.getUriForFile(context, "com.sayqz.tunefree.FileProvider", file)
+                        success.invoke(contentUri)
+                    }
+
+                    override fun onFailure(call: Call, e: IOException) {
+
+                    }
+                })
+            } catch (e: Exception) {
+                e.printStackTrace()
+
             }
         }
 

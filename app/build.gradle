@@ -43,8 +43,8 @@ android {
         applicationId "com.sayqz.tunefree"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 103
-        versionName "1.0.3"
+        versionCode 104
+        versionName "1.0.4"
 
         multiDexEnabled true
 
@@ -113,6 +113,15 @@ dependencies {
     implementation 'com.umeng.umsdk:asms:1.4.1'
     implementation 'com.umeng.umsdk:apm:1.5.2'
 
+//    //友盟分享核心组件
+//    implementation 'com.umeng.umsdk:share-core:7.3.3'
+//    //微信
+//    implementation 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.24'
+//    implementation 'com.umeng.umsdk:share-wx:7.3.3'
+//    //QQ
+//    implementation files('libs/open_sdk_3.5.14.4_r377deaa_lite.jar')
+//    implementation 'com.umeng.umsdk:share-qq:7.3.3'
+
     implementation 'com.airbnb.android:lottie:3.6.0'
     implementation 'ren.qinc.edgetranslucent:lib:0.0.3'
     implementation 'androidx.room:room-runtime:2.2.5'
@@ -137,4 +146,6 @@ dependencies {
     // Media
     implementation("androidx.media:media:1.5.0")
     implementation 'com.github.liangjingkanji:Serialize:1.3.1'
+
+    implementation 'gdut.bsx:share2:0.9.3'
 }

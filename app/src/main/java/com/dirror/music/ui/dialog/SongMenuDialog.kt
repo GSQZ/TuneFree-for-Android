@@ -2,6 +2,7 @@ package com.dirror.music.ui.dialog
 
 import android.app.Activity
 import android.content.Context
+import android.net.Uri
 import com.dirror.music.App
 import com.dirror.music.databinding.DialogSongMenuBinding
 import com.dirror.music.manager.User
@@ -12,7 +13,10 @@ import com.dirror.music.plugin.PluginConstants
 import com.dirror.music.plugin.PluginSupport
 import com.dirror.music.ui.base.BaseBottomSheetDialog
 import com.dirror.music.util.AppConfig
+import com.dirror.music.util.MagicHttp
 import com.dirror.music.util.toast
+import gdut.bsx.share2.Share2
+import gdut.bsx.share2.ShareContentType
 
 /**
  * 每个歌曲右边三个点点击后显示
@@ -52,7 +56,7 @@ constructor(
                 } else {
                     when (songData.source) {
                         SOURCE_NETEASE -> {
-                            App.cloudMusicManager.likeSong(songData.id?:"", {
+                            App.cloudMusicManager.likeSong(songData.id ?: "", {
                                 toast("添加到我喜欢成功")
                             }, {
                                 toast("添加到我喜欢失败")
@@ -65,6 +69,31 @@ constructor(
                     }
                 }
             }
+            // 分享给好友
+            itemSongShare.setOnClickListener {
+                var shareImageUri: Uri
+                toast("加载海报中...")
+                MagicHttp.OkHttpManager().getPic(
+                    activity,
+                    "https://csm.sayqz.com/api/web/share/?id=${songData.id}"
+                ) { uri ->
+                    try {
+                        shareImageUri = uri
+                        songData.name?.let { it1 ->
+                            Share2.Builder(activity)
+                                .setContentType(ShareContentType.IMAGE)
+                                .setTitle(it1)
+                                .setShareFileUri(shareImageUri)
+                                .build()
+                                .shareBySystem()
+                        }
+                    } catch (e: Exception) {
+
+                    }
+                }
+                // 自己消失
+                dismiss()
+            }
             // 歌曲信息
             itemSongInfo.setOnClickListener {
                 // toast("歌曲信息 ${ songData.id }")
@@ -74,7 +103,11 @@ constructor(
             }
             // 歌曲评论
             itemSongComment.setOnClickListener {
-                App.activityManager.startCommentActivity(activity, songData.source?: SOURCE_NETEASE, songData.id?:"")
+                App.activityManager.startCommentActivity(
+                    activity,
+                    songData.source ?: SOURCE_NETEASE,
+                    songData.id ?: ""
+                )
                 dismiss()
             }
             // 歌曲删除

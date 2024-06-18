@@ -128,9 +128,9 @@
             android:layout_marginStart="28dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="28dp"
-            android:singleLine="true"
             android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
             android:text="@string/music"
             android:textAlignment="textStart"
             android:textColor="@color/colorTextForeground"
@@ -202,6 +202,7 @@
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_button_icon"
+                android:contentDescription="@string/close_timer"
                 android:padding="14.5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/ivLike"
@@ -209,8 +210,7 @@
                 app:layout_constraintStart_toEndOf="@+id/ivEqualizer"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/ic_player_sleep_timer"
-                android:contentDescription="@string/close_timer" />
+                app:srcCompat="@drawable/ic_player_sleep_timer" />
 
             <ImageView
                 android:id="@+id/ivLike"
@@ -235,11 +235,25 @@
                 android:contentDescription="@string/comment"
                 android:padding="16.6dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/ivMore"
+                app:layout_constraintEnd_toStartOf="@+id/ivShare"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/ivLike"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_player_comment" />
+
+            <ImageView
+                android:id="@+id/ivShare"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/background_button_icon"
+                android:contentDescription="分享"
+                android:padding="16.6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivMore"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/ivComment"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_share" />
 
             <ImageView
                 android:id="@+id/ivMore"
@@ -308,11 +322,11 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="15dp"
             android:alpha="0.72"
+            android:background="@null"
             android:maxHeight="2dp"
             android:minHeight="4dp"
             android:progressDrawable="@drawable/background_seek_bar_music"
             android:splitTrack="false"
-            android:background="@null"
             android:thumb="@drawable/background_seek_bar_thumb"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"

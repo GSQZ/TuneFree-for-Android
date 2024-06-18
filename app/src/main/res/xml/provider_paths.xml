@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
-  <external-path name="external_files" path="."/>
+    <external-path
+        name="external_files"
+        path="." />
+    <external-files-path
+        name="umeng_cache"
+        path="umeng_cache/" />
+    <root-path
+        name="opensdk_root"
+        path="" />
 </paths>

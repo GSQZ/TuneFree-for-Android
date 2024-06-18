@@ -22,6 +22,7 @@
     <string name="source_code">源代码</string>
     <string name="pitch">音高</string>
     <string name="song_info">歌曲信息</string>
+    <string name="song_share">分享给好友</string>
     <string name="song_id">歌曲 ID</string>
     <string name="source">来源</string>
     <string name="type">类型</string>
